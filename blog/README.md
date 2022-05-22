@@ -192,33 +192,38 @@
 ## Component 만들기
 * react에서는 여러 div들을 깔끔하게 한줄로 축약할 수 있음
 * 언제 쓰면 좋을까?
-    => 반복적인 html태그들을 축약할 때 (ex: list들)
-    => 큰 페이지들
-    => 자주 변경되는 것들
-* but! 컴포넌트 쓰려면 state 위치를 주의해야함
+    - 반복적인 html태그들을 축약할 때 (ex: list들)
+    - 큰 페이지들
+    - 자주 변경되는 것들
+* but! **컴포넌트 쓰려면 state 위치를 주의해야함**
 
-1. function App()밖에 함수만들기 (작명은 대문자로 시작)
+1. function App()밖에 함수만들기 (**작명은 대문자**로 시작)
 
 2. return()안에 div박스 만들기 (retun안에는 태그 하나만 써야함)
-    * 굳이 태그를 1개이상 만들고 싶으면
-    => <> </> 안에 묶어주기
+    - 굳이 태그를 1개이상 만들고 싶으면 <> </> 안에 묶어주기
 
 3. function App()에 <Modal></Modal> 컴포넌트를 넣어줌
-    * <Modal/> 이렇게 써줘도 됨
+    - <Modal/> 이렇게 써줘도 됨
 
 <br>
 
 ## Component 만드는 문법
-1. function Modal() {
-    return()
-}
+1. 첫 번째 방법
+    ```javascript
+        function Modal() {
+            return()
+        }
+    ```
 
-2. const Modal = () => {
-    retrun()
-}
-=> const로 만드는 것이 좋음 => 재선언 방지
+2. 두 번째 방법
+    ```javascript
+        const Modal = () => {
+            retrun()
+        }
+    ```
+    > const로 만드는 것이 좋음 => 재선언 방지
 
-*function App()도 컴포넌트임, index.js를 보면 <App/> 확인 가능
+> function App()도 컴포넌트임, index.js를 보면 <App/> 확인 가능
 
 
 <!-------------------------------------------------------------------->
