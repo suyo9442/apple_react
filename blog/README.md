@@ -294,7 +294,7 @@ document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
 
 
 ## HW: 글제목을 누르면 다시 안보이도록
-* onClick은 버튼 누를 때마다 클릭수 +1하면 왜.. => 1, 1, 2, 1, 1 ??         <h4 onClick={ ()=>{ 
+### onClick은 버튼 누를 때마다 클릭수 +1하면 왜.. => 1, 1, 2, 1, 1 ??         <h4 onClick={ ()=>{ 
           클릭수 += 1;
           console.log(클릭수)
 
