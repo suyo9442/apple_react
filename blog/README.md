@@ -243,33 +243,33 @@
 ### 1. HTML, CSS로 UI 미리 디지인 완성
 
 ### 2. UI 현재상태를 state로 저장
+- 변경함수는 보통 앞에 'set'을 붙여주기도 함 
     let [modal, setModal] = useState('');
-    > 변경함수는 보통 앞에 'set'을 붙여주기도 함 
 
-    ```javascript
-    => let [modal, setModal] = useState(false);
-    
-    * state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
+- state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
+    let [modal, setModal] = useState(false);
 
 ### 3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
-    * state가 true면 UI 보여주세요
-    * 리액트에서는 버튼 누르면 모달창 스위치만 건드리고,
-    썡 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림
-    => 쌩 JS에서 익숙한 사람들은 정신개조가 필요함(ㅋㅋ)
+- state가 true면 UI 보여주세요
+> 리액트에서는 버튼 누르면 모달창 스위치만 건드리고, 쌩 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림
+> 쌩 JS에서 익숙한 사람들은 정신개조가 필요함(ㅋㅋ)
     
-1) function App()안에 {} 중괄호 열어서 작성
-    * html작성하는 곳이기 때문에 JS문법 사용X so, 삼항연산자 사용(ternary operator)
-* {조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드}
-* 1 == 1 ? '맞음' : '아님' //맞음
-* modal == true ? <Modal/> : null
-    * 비어있는 html을 쓸 때 null값을 주로 사용
+1. function App()안에 {} 중괄호 열어서 작성
+    - html작성하는 곳이기 때문에 JS문법 사용X so, 삼항연산자 사용(ternary operator)
+        ```javascript
+            //조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드
+            1 == 1 ? '맞음' : '아님' //맞음
+            modal == true ? <Modal/> : null
+        ```
+        > 비어있는 html을 쓸 때 null값을 주로 사용
 
-2) 이제 Modal의 state만 조정하면 됨
-* 클릭시 state조절
-    => <h4 제목누르면 modal state를 true로>{ 글제목[2] }</h4>
-    => state 변경함수를 활용
-    ==> <h4 onClick={ ()=>{ setModal(true) } }>{ 글제목[2] }</h4>
-
+2. 이제 Modal의 state만 조정하면 됨
+    - 클릭시 state조절
+        ```javascript
+            <h4 제목누르면 modal state를 true로>{ 글제목[2] }</h4>
+            // state 변경함수를 활용
+            <h4 onClick={ ()=>{ setModal(true) } }>{ 글제목[2] }</h4>
+        ```
 
 <br>
 
