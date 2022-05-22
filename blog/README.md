@@ -1,91 +1,19 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-<!-------------------------------------------------------------------->
-
-
 # level_1: 리액트 React 설치와 개발환경 셋팅 (2022 ver)
+
 ## 리액트 설치방법 
-1. node.js설치
-2. 폴더 - powershell로 터미널 열어서 npx create-react-app '프로젝트명'
-** npx는 node.js에서 딸려온 프로젝트 생성 명령어
-3. vsCode 열어서 프로젝트폴더 제대루 열어주고, 터미널에서 npm start 하면 미리보기 가능!
+### 1. node.js설치
+
+### 2. 폴더 - powershell로 터미널 열어서 npx create-react-app '프로젝트명'
+> npx는 node.js에서 딸려온 프로젝트 생성 명령어
+
+### 3. vsCode 열어서 프로젝트폴더 제대루 열어주고, 터미널에서 npm start 하면 미리보기 가능!
 
 
-## 리액트 폴더 설명
-- node_modules: 프로젝트 구동에 필요한 모든 라이브러리 코드를 모아둔 폴더
-- public: static(html, 이미지..)파일 보관하는 곳
-- src: 코드 직접 짜는곳! ==> app.js가 메인!
-- package.json: 프로젝트 정보 파일 (프로젝트명, 버전..), 라이브러리 이름들..
+## 리액트 폴더들 설명
+* node_modules: 프로젝트 구동에 필요한 모든 라이브러리 코드를 모아둔 폴더
+* public: static(html, 이미지..)파일 보관하는 곳
+* src: 코드 직접 짜는곳! ==> app.js가 메인!
+* package.json: 프로젝트 정보 파일 (프로젝트명, 버전..), 라이브러리 이름들..
 
 
 <!-------------------------------------------------------------------->
@@ -274,23 +202,24 @@ document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
     * state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
 
 ### 3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
-* state가 true면 UI 보여주세요
-    1) function App()안에 {} 중괄호 열어서 작성
+    * state가 true면 UI 보여주세요
+    * 리액트에서는 버튼 누르면 모달창 스위치만 건드리고,
+    썡 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림
+    => 쌩 JS에서 익숙한 사람들은 정신개조가 필요함(ㅋㅋ)
+    
+1) function App()안에 {} 중괄호 열어서 작성
     * html작성하는 곳이기 때문에 JS문법 사용X so, 삼항연산자 사용(ternary operator)
-        => {조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드}
-        => 1 == 1 ? '맞음' : '아님' //맞음
-        ==> modal == true ? <Modal/> : null
-            * 비어있는 html을 쓸 때 null값을 주로 사용
+* {조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드}
+* 1 == 1 ? '맞음' : '아님' //맞음
+* modal == true ? <Modal/> : null
+    * 비어있는 html을 쓸 때 null값을 주로 사용
 
-    2) 이제 Modal의 state만 조정하면 됨
-    * 클릭시 state조절
-        => <h4 제목누르면 modal state를 true로>{ 글제목[2] }</h4>
-        => state 변경함수를 활용
-        ==> <h4 onClick={ ()=>{ setModal(true) } }>{ 글제목[2] }</h4>
+2) 이제 Modal의 state만 조정하면 됨
+* 클릭시 state조절
+    => <h4 제목누르면 modal state를 true로>{ 글제목[2] }</h4>
+    => state 변경함수를 활용
+    ==> <h4 onClick={ ()=>{ setModal(true) } }>{ 글제목[2] }</h4>
 
-* 리액트에서는 버튼 누르면 모달창 스위치만 건드리고,
-썡 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림
-=> 쌩 JS에서 익숙한 사람들은 정신개조가 필요함(ㅋㅋ)
 
 
 ## HW: 글제목을 누르면 다시 안보이도록
