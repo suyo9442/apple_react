@@ -274,7 +274,7 @@ document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
     * state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
 
 ### 3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
-** state가 true면 UI 보여주세요
+* state가 true면 UI 보여주세요
     1) function App()안에 {} 중괄호 열어서 작성
     * html작성하는 곳이기 때문에 JS문법 사용X so, 삼항연산자 사용(ternary operator)
         => {조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드}
