@@ -264,17 +264,17 @@ document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
 
 # level_5: 리액트 환경에서 동적인 UI 만드는 법 (모달창만들기)
 ## 동적인 UI 만드는 3-step
-1. HTML, CSS로 UI 미리 디지인 완성
+### 1. HTML, CSS로 UI 미리 디지인 완성
 
-2. UI 현재상태를 state로 저장
+### 2. UI 현재상태를 state로 저장
     => let [modal, setModal] = useState('');
     * 변경함수는 보통 앞에 'set'을 붙여주기도 함 
 
     => let [modal, setModal] = useState(false);
     * state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
 
-3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
-* state가 true면 UI 보여주세요
+### 3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
+** state가 true면 UI 보여주세요
     1) function App()안에 {} 중괄호 열어서 작성
     * html작성하는 곳이기 때문에 JS문법 사용X so, 삼항연산자 사용(ternary operator)
         => {조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드}
@@ -294,7 +294,8 @@ document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
 
 
 ## HW: 글제목을 누르면 다시 안보이도록
-### onClick은 버튼 누를 때마다 클릭수 +1하면 왜.. => 1, 1, 2, 1, 1 ??         <h4 onClick={ ()=>{ 
+### onClick은 버튼 누를 때마다 클릭수 +1하면 왜.. => 1, 1, 2, 1, 1 ??      
+        <h4 onClick={ ()=>{ 
           클릭수 += 1;
           console.log(클릭수)
 
@@ -304,7 +305,7 @@ document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
             setModal(false)
           }
 
-          } }>{ 글제목[2] }</h4>
+        } }>{ 글제목[2] }</h4>
 
 
 * false면 true, true면 false로 바꿔주세요 하면 되긴 해..
