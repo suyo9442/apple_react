@@ -243,12 +243,14 @@
 ### 1. HTML, CSS로 UI 미리 디지인 완성
 
 ### 2. UI 현재상태를 state로 저장
-        ```jsx
+        ```
             let [modal, setModal] = useState('');
         ```
         > 변경함수는 보통 앞에 'set'을 붙여주기도 함 
 
-        ```jsx
+
+
+        ```
             let [modal, setModal] = useState(false);
         ```
         > state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
