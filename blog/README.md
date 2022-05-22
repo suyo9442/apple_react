@@ -243,9 +243,7 @@
 ### 1. HTML, CSS로 UI 미리 디지인 완성
 
 ### 2. UI 현재상태를 state로 저장
-    ```
-        let [modal, setModal] = useState('');
-    ```
+    let [modal, setModal] = useState('');
     > 변경함수는 보통 앞에 'set'을 붙여주기도 함 
 
     ```javascript
