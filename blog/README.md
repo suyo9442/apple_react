@@ -6,7 +6,7 @@
 ### 2. 폴더 - powershell로 터미널 열어서 npx create-react-app '프로젝트명'
 > npx는 node.js에서 딸려온 프로젝트 생성 명령어
 
-### 3. vsCode 열어서 프로젝트폴더 제대루 열어주고, 터미널에서 npm start 하면 미리보기 가능!
+### 3. vsCode 열어서 프로젝트폴더 **제대로** 열어주고, 터미널에서 npm start 하면 미리보기 가능!
 
 
 ## 리액트 폴더들 설명
