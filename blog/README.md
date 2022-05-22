@@ -202,8 +202,16 @@
 2. return()안에 div박스 만들기 (retun안에는 태그 하나만 써야함)
     - 굳이 태그를 1개이상 만들고 싶으면 <> </> 안에 묶어주기
 
-3. function App()에 <Modal></Modal> 컴포넌트를 넣어줌
-    - <Modal/> 이렇게 써줘도 됨
+3. function App()에 
+    ```javascript
+        <Modal></Modal> 
+        // 컴포넌트를 넣어줌
+    ```
+
+    ```javascript
+        - <Modal/> 
+        // 이렇게 써줘도 됨
+    ```
 
 <br>
 
