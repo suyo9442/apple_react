@@ -244,14 +244,14 @@
 
 ### 2. UI 현재상태를 state로 저장
 - 변경함수는 보통 앞에 'set'을 붙여주기도 함 
-    let [modal, setModal] = useState('');
+    - let [modal, setModal] = useState('');
 
 - state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
-    let [modal, setModal] = useState(false);
+    - let [modal, setModal] = useState(false);
 
 ### 3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
 - state가 true면 UI 보여주세요
-> 리액트에서는 버튼 누르면 모달창 스위치만 건드리고, 쌩 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림
+> 리액트에서는 버튼 누르면 모달창 스위치만 건드리고, 쌩 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림..
 > 쌩 JS에서 익숙한 사람들은 정신개조가 필요함(ㅋㅋ)
     
 1. function App()안에 {} 중괄호 열어서 작성
@@ -275,19 +275,19 @@
 
 ## HW: 글제목을 누르면 다시 안보이도록
 - onClick은 버튼 누를 때마다 클릭수 +1하면 왜.. => 1, 1, 2, 1, 1 ??      
-```javascript
-        <h4 onClick={ ()=>{ 
-          클릭수 += 1;
-          console.log(클릭수)
+    ```javascript
+            <h4 onClick={ ()=>{ 
+            클릭수 += 1;
+            console.log(클릭수)
 
-          if(클릭수 % 2 != 0) {
-            setModal(true) 
-          } else {
-            setModal(false)
-          }
+            if(클릭수 % 2 != 0) {
+                setModal(true) 
+            } else {
+                setModal(false)
+            }
 
-        } }>{ 글제목[2] }</h4>
-```
+            } }>{ 글제목[2] }</h4>
+    ```
 
-> false면 true, true면 false로 바꿔주세요 하면 되긴 해..
+    > false면 true, true면 false로 바꿔주세요 하면 되긴 해..
 
