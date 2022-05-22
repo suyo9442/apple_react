@@ -243,15 +243,15 @@
 ### 1. HTML, CSS로 UI 미리 디지인 완성
 
 ### 2. UI 현재상태를 state로 저장
-    ```javascript
-        let [modal, setModal] = useState('');
-    ```
-    > 변경함수는 보통 앞에 'set'을 붙여주기도 함 
+        ```javascript
+            let [modal, setModal] = useState('');
+        ```
+        > 변경함수는 보통 앞에 'set'을 붙여주기도 함 
 
-    ```javascript
-        let [modal, setModal] = useState(false);
-    ```
-    > state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
+        ```javascript
+            let [modal, setModal] = useState(false);
+        ```
+        > state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
 
 ### 3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
     * state가 true면 UI 보여주세요
