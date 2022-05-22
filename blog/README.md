@@ -1,19 +1,19 @@
 # level_1: 리액트 React 설치와 개발환경 셋팅 (2022 ver)
 
 ## 리액트 설치방법 
-### 1. node.js설치
-### 2. 폴더 - powershell로 터미널 열어서 npx create-react-app '프로젝트명'
+1. node.js설치
+2. 폴더 - powershell로 터미널 열어서 npx create-react-app '프로젝트명'
 > npx는 node.js에서 딸려온 프로젝트 생성 명령어
 
-### 3. vsCode 열어서 프로젝트폴더 **제대로** 열어주고, 터미널에서 npm start 하면 미리보기 가능!
+3. vsCode 열어서 프로젝트폴더 **제대로** 열어주고, 터미널에서 npm start 하면 미리보기 가능!
 
 <br>
 
 ## 리액트 폴더들 설명
-* **node_modules** 프로젝트 구동에 필요한 모든 라이브러리 코드를 모아둔 폴더
-* **public** static(html, 이미지..)파일 보관하는 곳
-* **src** 코드 직접 짜는곳! ==> app.js가 메인!
-* **package.json** 프로젝트 정보 파일 (프로젝트명, 버전..), 라이브러리 이름들..
+- **node_modules** 프로젝트 구동에 필요한 모든 라이브러리 코드를 모아둔 폴더
+- **public** static(html, 이미지..)파일 보관하는 곳
+- **src** 코드 직접 짜는곳! ==> app.js가 메인!
+- **package.json** 프로젝트 정보 파일 (프로젝트명, 버전..), 라이브러리 이름들..
 
 
 <!-------------------------------------------------------------------->
@@ -21,28 +21,39 @@
 
 
 # level_2: 리액트에서 레이아웃 만들 때 쓰는 JSX 문법 3개
-## jsx
-- .js에서 html을 쓸 수 있게 도와주는 언어
+## jsx란?
+- js에서 html을 쓸 수 있게 도와주는 언어
 -  원래 리액트에서 html을 작성하려면 js에서
-=> React.createElement('div', null, 'Hello World')
-==> but, 쉽게 html을 jsx로 html을 작성할 수 있음
+```javascript
+React.createElement('div', null, 'Hello World')
+```
+- but, 쉽게 html을 jsx로 html을 작성할 수 있음
 
+<br>
 
 ## jsx문법
-1. class => className
+1. class => classN
 
-2. 서버에서 데이터 가져와서 꽂기 (중괄호 문법) = '데이터바인딩'
-document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
-=> let post = '강남 우동 맛집'
-   <h4>{ post }</h4>
-** 상상하는 어느곳에나 {} 사용가능! (ex: id, src..)
+2. 서버에서 데이터 가져와서 꽂기 (중괄호 문법 사용)
+- 원래는 이렇게 하잖어?
+```javascript
+    document.querySelector('h4').innerHTML = post; 
+```
+- 하지만 리액트에서는!
+```javascript
+     let post = '강남 우동 맛집'
+    <h4>{ post }</h4>
+```
+> 상상하는 어느곳에나 {} 사용가능! (ex: id, src..)
 
-3. html태그에 스타일태그를 쓰려면
-=> <h4 style={ {color: 'red', fontSize: '16px'} }>블로그임</h4>
-==> 스타일 값은 오브젝트 형식로 써야함 (ex: 'red')
-==> js에서 하이픈은 빼기로 해석하기 때문에 카멜케이스 사용(ex: fontSize)
+3. html태그에 스타일태그를 쓰려면..
+```javascript
+    <h4 style={ {color: 'red', fontSize: '16px'} }>블로그임</h4>
+```
+- 스타일 값은 오브젝트 형식로 써야함 (ex: 'red')
+- js에서 하이픈은 빼기로 해석하기 때문에 카멜케이스 사용(ex: fontSize)
 
-* 에러 메시지는 브라우저, 터미널, 콘솔창에서 확인해서 디버깅하기
+> 에러 메시지는 브라우저, 터미널, 콘솔창에서 확인해서 디버깅하기
 
 
 <!-------------------------------------------------------------------->
