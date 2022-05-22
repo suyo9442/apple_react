@@ -291,3 +291,5 @@
 
     > false면 true, true면 false로 바꿔주세요 하면 되긴 해..
 
+> !? readme에서 react 코드블럭 만드려면 어떻게..?
+> !? onClick은 버튼 누를 때마다 클릭수 +1하면 왜..?
