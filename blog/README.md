@@ -25,7 +25,7 @@
 - js에서 html을 쓸 수 있게 도와주는 언어
 -  원래 리액트에서 html을 작성하려면 js에서
 ```javascript
-React.createElement('div', null, 'Hello World')
+    React.createElement('div', null, 'Hello World')
 ```
 - but, 쉽게 html을 jsx로 html을 작성할 수 있음
 
@@ -62,37 +62,38 @@ React.createElement('div', null, 'Hello World')
 
 # level_3: 중요한 데이터는 변수말고 state에 담습니다
 ## 레이아웃 짤 때 주의사항
-1. return () 안에 짜야한다는 것
-   병렬로 태그 2개 이상 작성X
+- return () 안에 짜야한다는 것, **병렬로 태그 2개 이상 작성X**
 
+<br>
 
 ## 변수 대신 쓸 수 있는 state 사용법
 1. import{useState}
 2. useState('보관할 자료')
 3. let [a, b] = useState('보관할 자료')
-=> a는 보관한 자료, b는 state 변경을 도와주는 함수
+    - a는 보관한 자료, b는 state 변경을 도와주는 함수
 
-** let [a, b] -> JS의 Destructuring 문법
-    let num = [1, 2]; // array중 중요한 데이터를 변수로 저장하고 싶을 때
-    let a = num[0]; // 1
-    let b = num[1]; // 2
-    
-    // 이렇게 할 수도 있지만
-    let [a, b] = [1, 2]; //이렇게 할 수도 있음
+* state는 JS의 Destructuring 문법이 기반
+    ```javascript
+        let num = [1, 2]; // array중 중요한 데이터를 변수로 저장하고 싶을 때
+        let a = num[0]; // 1
+        let b = num[1]; // 2
 
-    // so, 
-    let [글제목, b] = useState('남자 코트 추천')
-    // 여기서 useState('남자 코트 추천')은 ==> ['남자 코트 추천', b] 라는
-    // 배열 형식으로 저장됨
+        // 이렇게↑ 할 수도 있지만
+        let [a, b] = [1, 2]; // ←이렇게 할 수도 있음
 
-** state, 언제 쓸까?
-- 변수랑 차이점? 
-=> 일반 변수는 만약 글제목이 변경되면, 직접 데이터를 수정해줘야함
-=> state에 쓴 html은 자동으로 재렌더링이 된다
+        // so !
+        let [글제목, b] = useState('남자 코트 추천')
+        // 여기서 useState('남자 코트 추천')은
+        // ['남자 코트 추천', b] 라는 배열 형식으로 저장됨
+    ```
 
-** 변동 시 자동으로 html에 반영되게 하고 싶으면 state써라.
-- 블로그 타이틀 이런거 자주 변경안되니까 쓸데없이 state 안써도됨 ㅎㅎ
-(let [logo, setLogo] = useState('ReactBlog');)
+* state, 언제 쓸까?
+    - 변수랑 차이점? 
+        - 일반 변수는 만약 글제목이 변경되면, 직접 데이터를 수정해줘야함 but, **state에 쓴 html은 자동으로 재렌더링이 된다**
+
+    - 변동 시 자동으로 html에 반영되게 하고 싶으면 state써라.
+    > 블로그 타이틀 이런거 자주 변경안되니까 쓸데없이 state 안써도됨 ㅎㅎ
+    > (let [logo, setLogo] = useState('ReactBlog');)
 
 
 <!-------------------------------------------------------------------->
@@ -104,6 +105,7 @@ React.createElement('div', null, 'Hello World')
 -> lint 꺼주는 기능
 -> lint? 선언하고 안쓴 변수들 알려주는 부가기능
 
+<br>
 
 ## 좋아요 누르면 +1
 1. 버튼에 이벤트핸들러 달기
@@ -189,6 +191,7 @@ React.createElement('div', null, 'Hello World')
 3. function App()에 <Modal></Modal> 컴포넌트를 넣어줌
     * <Modal/> 이렇게 써줘도 됨
 
+<br>
 
 ## Component 만드는 문법
 1. function Modal() {
@@ -209,16 +212,16 @@ React.createElement('div', null, 'Hello World')
 
 # level_5: 리액트 환경에서 동적인 UI 만드는 법 (모달창만들기)
 ## 동적인 UI 만드는 3-step
-### 1. HTML, CSS로 UI 미리 디지인 완성
+1. HTML, CSS로 UI 미리 디지인 완성
 
-### 2. UI 현재상태를 state로 저장
+2. UI 현재상태를 state로 저장
     => let [modal, setModal] = useState('');
     * 변경함수는 보통 앞에 'set'을 붙여주기도 함 
 
     => let [modal, setModal] = useState(false);
     * state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
 
-### 3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
+3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
     * state가 true면 UI 보여주세요
     * 리액트에서는 버튼 누르면 모달창 스위치만 건드리고,
     썡 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림
@@ -238,9 +241,11 @@ React.createElement('div', null, 'Hello World')
     ==> <h4 onClick={ ()=>{ setModal(true) } }>{ 글제목[2] }</h4>
 
 
+<br>
 
 ## HW: 글제목을 누르면 다시 안보이도록
-### onClick은 버튼 누를 때마다 클릭수 +1하면 왜.. => 1, 1, 2, 1, 1 ??      
+- onClick은 버튼 누를 때마다 클릭수 +1하면 왜.. => 1, 1, 2, 1, 1 ??      
+```javascript
         <h4 onClick={ ()=>{ 
           클릭수 += 1;
           console.log(클릭수)
@@ -252,7 +257,7 @@ React.createElement('div', null, 'Hello World')
           }
 
         } }>{ 글제목[2] }</h4>
+```
 
-
-* false면 true, true면 false로 바꿔주세요 하면 되긴 해..
+> false면 true, true면 false로 바꿔주세요 하면 되긴 해..
 
