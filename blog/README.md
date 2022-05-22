@@ -240,16 +240,20 @@
 
 # level_5: 리액트 환경에서 동적인 UI 만드는 법 (모달창만들기)
 ## 동적인 UI 만드는 3-step
-1. HTML, CSS로 UI 미리 디지인 완성
+### 1. HTML, CSS로 UI 미리 디지인 완성
 
-2. UI 현재상태를 state로 저장
-    => let [modal, setModal] = useState('');
-    * 변경함수는 보통 앞에 'set'을 붙여주기도 함 
+### 2. UI 현재상태를 state로 저장
+    ```javascript
+        let [modal, setModal] = useState('');
+    ```
+    > 변경함수는 보통 앞에 'set'을 붙여주기도 함 
 
-    => let [modal, setModal] = useState(false);
-    * state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
+    ```javascript
+        let [modal, setModal] = useState(false);
+    ```
+    > state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
 
-3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
+### 3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
     * state가 true면 UI 보여주세요
     * 리액트에서는 버튼 누르면 모달창 스위치만 건드리고,
     썡 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림
