@@ -2,7 +2,7 @@
 
 ## 리액트 설치방법 
 ### 1. node.js설치
-
+<br>
 ### 2. 폴더 - powershell로 터미널 열어서 npx create-react-app '프로젝트명'
 > npx는 node.js에서 딸려온 프로젝트 생성 명령어
 
