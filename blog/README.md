@@ -162,6 +162,7 @@ document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
 -> lint 꺼주는 기능
 -> lint? 선언하고 안쓴 변수들 알려주는 부가기능
 
+
 ## 좋아요 누르면 +1
 1. 버튼에 이벤트핸들러 달기
     onClick={ ()=>{ 따봉변경(따봉+1) } }
@@ -221,4 +222,90 @@ document.querySelector('h4').innerHTML = post; 원래는 이렇게 하잖어?
         괄호 벗기고, 괄호 다시 씌워주세요 해줘야 화살표도 달리짐(새로운 state로 인식!)
         이런 문법 특징을 Reference data type라고 칭해
 
+
+
+<!-------------------------------------------------------------------->
+
+
+# level_4: Component : 많은 div들을 한 단어로 줄이고 싶으면
+## Component 만들기
+* react에서는 여러 div들을 깔끔하게 한줄로 축약할 수 있음
+* 언제 쓰면 좋을까?
+    => 반복적인 html태그들을 축약할 때 (ex: list들)
+    => 큰 페이지들
+    => 자주 변경되는 것들
+* but! 컴포넌트 쓰려면 state 위치를 주의해야함
+
+1. function App()밖에 함수만들기 (작명은 대문자로 시작)
+
+2. return()안에 div박스 만들기 (retun안에는 태그 하나만 써야함)
+    * 굳이 태그를 1개이상 만들고 싶으면
+    => <> </> 안에 묶어주기
+
+3. function App()에 <Modal></Modal> 컴포넌트를 넣어줌
+    * <Modal/> 이렇게 써줘도 됨
+
+
+## Component 만드는 문법
+1. function Modal() {
+    return()
+}
+
+2. const Modal = () => {
+    retrun()
+}
+=> const로 만드는 것이 좋음 => 재선언 방지
+
+*function App()도 컴포넌트임, index.js를 보면 <App/> 확인 가능
+
+
+<!-------------------------------------------------------------------->
+
+
+# level_5: 리액트 환경에서 동적인 UI 만드는 법 (모달창만들기)
+## 동적인 UI 만드는 3-step
+1. HTML, CSS로 UI 미리 디지인 완성
+
+2. UI 현재상태를 state로 저장
+    => let [modal, setModal] = useState('');
+    * 변경함수는 보통 앞에 'set'을 붙여주기도 함 
+
+    => let [modal, setModal] = useState(false);
+    * state값은 UI의 기본값으로 설정 (ex: 닫힘, 0, false..)
+
+3. state에 따라 UI가 어떻게 보일지 작성 (ex: 조건문..)
+* state가 true면 UI 보여주세요
+    1) function App()안에 {} 중괄호 열어서 작성
+    * html작성하는 곳이기 때문에 JS문법 사용X so, 삼항연산자 사용(ternary operator)
+        => {조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드}
+        => 1 == 1 ? '맞음' : '아님' //맞음
+        ==> modal == true ? <Modal/> : null
+            * 비어있는 html을 쓸 때 null값을 주로 사용
+
+    2) 이제 Modal의 state만 조정하면 됨
+    * 클릭시 state조절
+        => <h4 제목누르면 modal state를 true로>{ 글제목[2] }</h4>
+        => state 변경함수를 활용
+        ==> <h4 onClick={ ()=>{ setModal(true) } }>{ 글제목[2] }</h4>
+
+* 리액트에서는 버튼 누르면 모달창 스위치만 건드리고,
+썡 JS에서는 버튼 누르면 모달창 HTML을 직접 건드림
+=> 쌩 JS에서 익숙한 사람들은 정신개조가 필요함(ㅋㅋ)
+
+
+## HW: 글제목을 누르면 다시 안보이도록
+* onClick은 버튼 누를 때마다 클릭수 +1하면 왜.. => 1, 1, 2, 1, 1 ??         <h4 onClick={ ()=>{ 
+          클릭수 += 1;
+          console.log(클릭수)
+
+          if(클릭수 % 2 != 0) {
+            setModal(true) 
+          } else {
+            setModal(false)
+          }
+
+          } }>{ 글제목[2] }</h4>
+
+
+* false면 true, true면 false로 바꿔주세요 하면 되긴 해..
 
