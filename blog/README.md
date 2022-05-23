@@ -566,9 +566,9 @@
 
 
     4. 누를 때 마다 해당글의 번호가 반영되는 함수를 모달함수에 꽂자
-            ```javascript
-                props.글제목[props.title] 
-            ```
+    ```javascript
+        props.글제목[props.title] 
+    ```
 
 
 
