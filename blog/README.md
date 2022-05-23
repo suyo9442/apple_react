@@ -197,7 +197,7 @@
     - 자주 변경되는 것들
 * but! **컴포넌트 쓰려면 state 위치를 주의해야함**
 
-1. function App()밖에 함수만들기 (**작명은 대문자**로 시작)
+1. function App() 밖에 함수만들기 (**작명은 대문자**로 시작)
 
 2. return()안에 div박스 만들기 (retun안에는 태그 하나만 써야함)
     - 굳이 태그를 1개이상 만들고 싶으면 <> </> 안에 묶어주기
@@ -271,6 +271,23 @@
             <h4 onClick={ ()=>{ setModal(true) } }>{ 글제목[2] }</h4>
         ```
 
+
+    - 조건문으로 작성
+        ```javascript
+            <div className="list">
+                <h4
+                    onClick={ ()=>{
+                        if(modal == false) {
+                        setModal(true)
+                        }
+                    else="else"
+                    {
+                    setModal(false)="setModal(false)"
+                    }="}">{ 글제목[2] }</h4>
+                <p>2월 17일 발행</p>
+            </div>
+        ```  
+
 <br>
 
 ## HW: 글제목을 누르면 다시 안보이도록
@@ -293,3 +310,148 @@
 
 > !? readme에서 react 코드블럭 만드려면 어떻게..?
 > !? onClick은 버튼 누를 때마다 클릭수 +1하면 왜..?
+
+
+<!-------------------------------------------------------------------->
+<br><br><br>
+
+
+# level_6: map : 많은 div들을 반복문으로 줄이고 싶은 충동이 들 때
+- 반복문으로 같은 HTML 반복 생성하는 법
+
+
+### map 사용법
+- 모든 array자료에 붙일 수 있음
+- array 개수만큼 함수를 실행
+    ```javascript
+        [1, 2, 3].map(function() {
+            console.log(1)
+        });
+    ``` 
+    > (3) 1
+
+
+- map 함수의 파라미터는 array 자료를 뜻함
+    ```javascript
+        [1, 2, 3].map(function(a) {
+            console.log(a);
+        });
+    ```
+    > 1,2,3
+
+
+- return 값을 array에 그대로 담아줌
+    ```javascript
+        [1,2,3].map(function(){
+            return '1233211'; 
+        });
+    ```
+    > array 개수만큼 담아줌
+    > (3) ['1233211', '1233211', '1233211']
+
+<br>
+
+### list들 반복생성하기
+> JS에서는 보통 for문을 쓰지만 JSX안에서는 {} 중괄호안에 for문을 사용X
+
+- 중괄호 안에 작성
+    ```javascript
+        [1,2,3].map(function(){
+            return <div>안녕</div>
+        })
+    ```
+    > 안녕 안녕 안녕
+
+
+- HTML이 여러줄 들어간다면 () 소괄호 안에 작성
+    ```javascript
+        [1,2,3].map(function(){
+          return (
+            <div className="list">
+            <h4>{ 글제목[1] }</h4>
+            <p>2월 17일 발행</p>
+          </div>
+          )
+        })
+    ```
+
+
+- 실제글의 제목수만큼 생성해주세요~
+    ```javascript
+        글제목.map(function(){
+          return (
+            <div className="list">
+            <h4>{ 글제목[1] }</h4>
+            <p>2월 17일 발행</p>
+          </div>
+          )
+        })
+    ```
+    
+    
+- 왜 같은 글만 3개 보임? (파라미터 사용하자)
+    ```javascript
+        글제목.map(function(a){
+          return (
+            <div className="list">
+            <h4>{ a }</h4>
+            <p>2월 17일 발행</p>
+          </div>
+          )
+        })
+    ```
+
+
+- 두번 째 파라미터는 0부터 증가하는 정수 (두 번째 파라미터 이용해도 동일)
+    ```javascript
+        글제목.map(function(a, i){
+          return (
+            <div className="list">
+            <h4>{ 글제목[i] }</h4>
+            <p>2월 17일 발행</p>
+          </div>
+          )
+        })
+    ```
+    > 글제목[i] = 글제목[0], 글제목[1], 글제목[2]
+
+
+### HW: 따봉 누를때마다 모든 따봉들이 증가하는 것 해결
+> 따봉을 기록할 state가 하나 밖에 없어서
+- 따봉 state를 여러개 만들어도 되겠지만 state가 여러 값을 저장할 수 있는 배열이라는 점을 활용하자
+- **array를 사용할 때 주의점**을 생각하자❗❗
+
+
+### 일반 반복문으로 HTML을 생성하려면?
+1. 변수에 *array* 추가
+2. 반복문 작성
+3. return()안에 사용
+```javascript
+  var 일반반복 = [];
+  for(let i = 0; i < 3; i++){
+    일반반복.push(<div key={i}>안녕</div>)
+  }
+
+  return(
+    { 일반반복 }
+  )
+```
+
+
+### 중괄호안에 HTML을 추가하면 오류가 뜨는 것 해결
+> Warning: Each child in a list should have a unique "key" prop.
+- 반복문 돌릴 때 마다 생성한 HTML은 각각 <u>다른 key값</u>을 가져야함❗
+
+
+<!-------------------------------------------------------------------->
+<br><br><br>
+
+
+# level_7: 
+
+
+<!-------------------------------------------------------------------->
+<br><br><br>
+
+
+# level_8: 

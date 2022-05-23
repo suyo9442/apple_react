@@ -6,15 +6,21 @@ import { useState } from 'react';
 function App() {
   
   let [글제목, 글제목변경] = useState(['남자 코트 추천', '강남 우동맛집', '파이썬독학']) 
-  let [따봉, 따봉변경] = useState(0);
+  let [따봉, 따봉변경] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
+
+
+  var 일반반복 = [];
+  for(let i = 0; i < 3; i++){
+    일반반복.push(<div key={i}>안녕</div>)
+  }
+
 
   return (
     <div className="App">
       <div className="black-nav">
         <div>React Blog</div>
       </div>
-
       <button onClick={ ()=>{
         let 글제목정렬 = [...글제목];
         글제목정렬.sort(function(a, b){
@@ -26,8 +32,8 @@ function App() {
         })
         글제목변경(글제목정렬);
       } }>가나다순 정렬</button>
-
-      <div className="list">
+      
+      {/* <div className="list">
         <h4>{ 글제목[0] } <span onClick={ ()=>{따봉변경(따봉+1) }}>👍</span> { 따봉 } </h4>
         <p>2월 17일 발행</p>
 
@@ -56,7 +62,33 @@ function App() {
             }
           } }>{ 글제목[2] }</h4>
         <p>2월 17일 발행</p>
-      </div>
+      </div> */}
+
+      { 일반반복 }
+
+      {
+        글제목.map(function(a, i){
+          return (
+            <div className="list" key={i}>
+            <h4 onClick={ ()=>{ 
+              if(modal == false) {
+                setModal(true) 
+              } else {
+                setModal(false)
+              }
+              } }>{ 글제목[i] }
+              <span onClick={ ()=>{
+                let 따봉copy = [...따봉];
+                따봉copy[i] += 1;
+                따봉변경(따봉copy) 
+                }}>
+              👍</span> { 따봉[i] }
+              </h4>
+            <p>2월 17일 발행</p>
+          </div>
+          )
+        })
+      }
 
       {
         // 조건식? 참일 때 실행할 코드 : 거짓일 때 실행할 코드
@@ -65,7 +97,7 @@ function App() {
       }
     </div>
   );
-}
+} // App
 
 function Modal() {
   return(
