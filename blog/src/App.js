@@ -9,13 +9,6 @@ function App() {
   let [따봉, 따봉변경] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
 
-
-  var 일반반복 = [];
-  for(let i = 0; i < 3; i++){
-    일반반복.push(<div key={i}>안녕</div>)
-  }
-
-
   return (
     <div className="App">
       <div className="black-nav">
@@ -64,7 +57,6 @@ function App() {
         <p>2월 17일 발행</p>
       </div> */}
 
-      { 일반반복 }
 
       {
         글제목.map(function(a, i){
@@ -89,22 +81,27 @@ function App() {
           )
         })
       }
-
       {
         // 조건식? 참일 때 실행할 코드 : 거짓일 때 실행할 코드
         // 1 == 1 ? '맞음' : '아님'
-        modal == true ? <Modal/> : null
+        modal == true ? <Modal color = {'skyblue'} 글제목 = {글제목} 글제목변경 = {글제목변경}/> : null
       }
+
     </div>
   );
 } // App
 
-function Modal() {
+function Modal(props) {
   return(
-    <div className="modal">
-        <h4>제목</h4>
+    <div className="modal" style={{background : props.color}}>
+        <h4>{ props.글제목 }</h4>
         <p>날짜</p>
         <p>상세내용</p>
+        <button onClick={function(){
+          let 여자코트 = [...props.글제목]
+          여자코트[0] = '여자 코트 추천'
+          props.글제목변경(여자코트)          
+        }}>글수정</button>
     </div>
   )
 }

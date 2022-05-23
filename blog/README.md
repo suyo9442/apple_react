@@ -415,12 +415,6 @@
     ```
     > 글제목[i] = 글제목[0], 글제목[1], 글제목[2]
 
-<br>
-
-### HW: 따봉 누를때마다 모든 따봉들이 증가하는 것 해결
-> 따봉을 기록할 state가 하나 밖에 없어서
-- 따봉 state를 여러개 만들어도 되겠지만 state가 여러 값을 저장할 수 있는 배열이라는 점을 활용하자
-- *array를 사용할 때 주의점*을 생각하자❗❗
 
 <br>
 
@@ -431,11 +425,11 @@
 ```javascript
   var 일반반복 = [];
   for(let i = 0; i < 3; i++){
-    일반반복.push(<div key={i}>안녕</div>)
+      일반반복.push(<div key={i}>안녕</div>)
   }
 
   return(
-    { 일반반복 }
+      { 일반반복 }
   )
 ```
 
@@ -445,12 +439,80 @@
 > Warning: Each child in a list should have a unique "key" prop.
 - 반복문 돌릴 때 마다 생성한 HTML은 각각 *다른 key값*을 가져야함❗
 
+<br>
+
+### HW: 따봉 누를때마다 모든 따봉들이 증가하는 것 해결
+> 따봉을 기록할 state가 하나 밖에 없어서
+- 따봉 state를 여러개 만들어도 되겠지만 state가 여러 값을 저장할 수 있는 배열이라는 점을 활용하자
+- *array를 사용할 때 주의점*을 생각하자❗❗
 
 <!-------------------------------------------------------------------->
 <br><br><br>
 
 
-# level_9: 
+# level_9: 자식이 부모의 state 가져다쓰고 싶을 때는 props
+### 모달창의 글제목을 바꿔보자
+```javascript
+    function Modal(props) {
+        return (
+            <h4>{ 글제목 }</h4>
+        )
+    }
+```
+- 하지만 함수의 closure 특징 상 탈출 불가 (App에서 만들었기 때문) 그래서, props문법을 사용한다
+
+<br>
+
+## props에 대해서
+![img](https://codingapple.com/wp-content/uploads/2020/04/%EC%BA%A1%EC%B2%98r544563.png)
+- <App> 안에 <Modal> 이 있는 상태
+- 부모 컴포넌트 > 자식 컴포넌트
+- 부모 컴포넌트에서 자식 컴포넌트로 state 전송해줄 수 있음
+- 그러면 자식이 부모가 가지고 있는 state 사용 가능
+- 🚫 props 전송은 부모 -> 자식만 가능
+- 🚫 옆집 컴포넌트끼리 전송X
+- 🚫 컴포넌트 많아지면 props하는거 번거로워짐
+
+<br>
+
+### props문법 2-step
+1. 부모 => 자식 state 전송
+    ```javascript
+        <자식컴포넌트 작명 = {state이름}>
+        modal == true ? <Modal 글제목 = {글제목}/> : null
+    ```
+> 보통 작명은 state이름과 동일하게
+
+
+2. 자식에 파라미터 등록 후 {props.작명}
+```javascript
+    function Modal(props) {
+        return (
+            <h4>{ props.글제목 }</h4>
+        )
+    }
+```
+> 보통 파라미터명은 props
+
+<br>
+
+## 다양한 색의 모달창이 필요하다면
+- background: '' 만 변경할 수 있도록 props사용
+    ```javascript
+        color = {'skyblue'}
+
+        function Modal(props) {
+            return (
+                style={{background : props.color}}
+            )
+        }
+    ```
+    > 일반 문자도 전송가능
+
+<br>
+
+## HW: 글수정 버튼을 누르면 첫 글 제목이 '여자 코트 추천'으로 변경
+- state변경함수도 props로 전송해줘야 사용이 가능하다는 것❗❗
 
 
 <!-------------------------------------------------------------------->
