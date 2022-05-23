@@ -465,7 +465,6 @@
 
 ## props에 대해서
 ![img](https://codingapple.com/wp-content/uploads/2020/04/%EC%BA%A1%EC%B2%98r544563.png)
-- <App> 안에 <Modal> 이 있는 상태
 - 부모 컴포넌트 > 자식 컴포넌트
 - 부모 컴포넌트에서 자식 컴포넌트로 state 전송해줄 수 있음
 - 그러면 자식이 부모가 가지고 있는 state 사용 가능
@@ -475,24 +474,24 @@
 
 <br>
 
-### props문법 2-step
+## props문법 2-step
 1. 부모 => 자식 state 전송
     ```javascript
-        <자식컴포넌트 작명 = {state이름}>
+        // <자식컴포넌트 작명 = {state이름}>
         modal == true ? <Modal 글제목 = {글제목}/> : null
     ```
-> 보통 작명은 state이름과 동일하게
+    > 보통 작명은 state이름과 동일하게
 
 
 2. 자식에 파라미터 등록 후 {props.작명}
-```javascript
-    function Modal(props) {
-        return (
-            <h4>{ props.글제목 }</h4>
-        )
-    }
-```
-> 보통 파라미터명은 props
+    ```javascript
+        function Modal(props) {
+            return (
+                <h4>{ props.글제목 }</h4>
+            )
+        }
+    ```
+    > 보통 파라미터명은 props
 
 <br>
 
