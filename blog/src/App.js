@@ -8,6 +8,7 @@ function App() {
   let [글제목, 글제목변경] = useState(['남자 코트 추천', '강남 우동맛집', '파이썬독학']) 
   let [따봉, 따봉변경] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
+  let [title, setTitle] = useState(0);
 
   return (
     <div className="App">
@@ -57,24 +58,31 @@ function App() {
         <p>2월 17일 발행</p>
       </div> */}
 
+      <button onClick={()=>{ setTitle(0) }}> 글제목0 </button>
+      <button onClick={()=>{ setTitle(1) }}> 글제목1 </button>
+      <button onClick={()=>{ setTitle(2) }}> 글제목2 </button>
 
       {
         글제목.map(function(a, i){
           return (
             <div className="list" key={i}>
-            <h4 onClick={ ()=>{ 
-              if(modal == false) {
-                setModal(true) 
-              } else {
-                setModal(false)
-              }
-              } }>{ 글제목[i] }
+            <h4 onClick={ (e)=>{ 
+                if(modal == false) {
+                  setModal(true) 
+                } else {
+                  setModal(false)
+                }
+
+                setTitle(i)
+              } }>
+              { 글제목[i] }
               <span onClick={ ()=>{
                 let 따봉copy = [...따봉];
                 따봉copy[i] += 1;
                 따봉변경(따봉copy) 
                 }}>
-              👍</span> { 따봉[i] }
+              👍</span> 
+              { 따봉[i] }
               </h4>
             <p>2월 17일 발행</p>
           </div>
@@ -84,17 +92,17 @@ function App() {
       {
         // 조건식? 참일 때 실행할 코드 : 거짓일 때 실행할 코드
         // 1 == 1 ? '맞음' : '아님'
-        modal == true ? <Modal color = {'skyblue'} 글제목 = {글제목} 글제목변경 = {글제목변경}/> : null
+        modal == true ? <Modal color={'skyblue'} 글제목={글제목} 글제목변경={글제목변경} title={title}/> : null
       }
-
     </div>
   );
 } // App
 
+
 function Modal(props) {
   return(
     <div className="modal" style={{background : props.color}}>
-        <h4>{ props.글제목 }</h4>
+        <h4>{ props.글제목[1] }</h4>
         <p>날짜</p>
         <p>상세내용</p>
         <button onClick={function(){
