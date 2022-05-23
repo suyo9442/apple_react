@@ -100,7 +100,7 @@
 <br><br><br>
 
 
-# level_3: 버튼에 기능개발을 해보자 & 리액트 state변경하는 법
+# level_4: 버튼에 기능개발을 해보자 & 리액트 state변경하는 법
 ## /* eslint-disable */
 - lint 꺼주는 기능
 - **lint?** 선언하고 안쓴 변수들 알려주는 부가기능
@@ -127,7 +127,7 @@
 <br><br><br>
 
 
-# level_3: array, object state 변경하는 법
+# level_5: array, object state 변경하는 법
 ## state변경함수 이용해서 array데이터 변경하면 다 바뀌어요ㅠㅠ
 - state가 갈아치워져서 그럼
     ```javascript  
@@ -188,7 +188,7 @@
 <br><br><br>
 
 
-# level_4: Component : 많은 div들을 한 단어로 줄이고 싶으면
+# level_6: Component : 많은 div들을 한 단어로 줄이고 싶으면
 ## Component 만들기
 * react에서는 여러 div들을 깔끔하게 한줄로 축약할 수 있음
 * 언제 쓰면 좋을까?
@@ -238,7 +238,7 @@
 <br><br><br>
 
 
-# level_5: 리액트 환경에서 동적인 UI 만드는 법 (모달창만들기)
+# level_7: 리액트 환경에서 동적인 UI 만드는 법 (모달창만들기)
 ## 동적인 UI 만드는 3-step
 ### 1. HTML, CSS로 UI 미리 디지인 완성
 
@@ -316,7 +316,7 @@
 <br><br><br>
 
 
-# level_6: map : 많은 div들을 반복문으로 줄이고 싶은 충동이 들 때
+# level_8: map : 많은 div들을 반복문으로 줄이고 싶은 충동이 들 때
 - 반복문으로 같은 HTML 반복 생성하는 법
 
 
@@ -447,11 +447,11 @@
 <br><br><br>
 
 
-# level_7: 
+# level_9: 
 
 
 <!-------------------------------------------------------------------->
 <br><br><br>
 
 
-# level_8: 
+# level_10: 
