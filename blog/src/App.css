@@ -58,3 +58,6 @@ div {
   background : #eee;
   text-align : left;
 }
+.none {
+  display: none;
+}
