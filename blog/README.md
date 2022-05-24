@@ -640,20 +640,20 @@ why? state변경함수는 늦게 처리됨
 > state를 조정하는 방법을 생각해❗
 
 
-> 원하는 자료 삭제하기 => splice(삭제위치, 삭제개수)
-```javascript
-    <button style={{float: 'right'}} onClick={(e)=>{
-        let copy = [...글제목]
-        copy.splice(0, 1)
-        글제목변경(copy)
-    }}>삭제</button>
-```
+- 원하는 자료 삭제하기 => splice(삭제위치, 삭제개수)
+    ```javascript
+        <button style={{float: 'right'}} onClick={(e)=>{
+            let copy = [...글제목]
+            copy.splice(0, 1)
+            글제목변경(copy)
+        }}>삭제</button>
+    ```
 
 
-> 0번 버튼 누르면 0번 삭제, 1번 버튼 누르면 1번 삭제 ?
-```javascript
-    copy.splice(i, 1)
-```
+- 0번 버튼 누르면 0번 삭제, 1번 버튼 누르면 1번 삭제 ?
+    ```javascript
+        copy.splice(i, 1)
+    ```
 
 <br>
 
@@ -661,27 +661,27 @@ why? state변경함수는 늦게 처리됨
 1. 글에 아무것도 입력안하고 발행버튼 누르는거 막으려면? 
 - input의 value값이 아무것도 없으면~ 조건을 달아야함
 - 입력값이 추가되지 않으면~ 하면 기존에 추가된 제목으로 글이 계속 생성됨
-```javascript
-    if (input.value == '') {
-        return
-    } else {
-        copy.unshift(입력값)
-        글제목변경(copy)
-        input.value = ''
-        input.focus()
-    }
-```
+    ```javascript
+        if (input.value == '') {
+            return
+        } else {
+            copy.unshift(입력값)
+            글제목변경(copy)
+            input.value = ''
+            input.focus()
+        }
+    ```
 
 <br>
 
 2. 글을 하나 추가하면 따봉갯수 개별적용하던 것도 이상해질 수 있습니다.
 > 글이 하나 추가되면 따봉기록할 곳도 하나 더 만들어줘야할듯요.
 - 따봉을 기록할 배열만 state에 추가해주면 됨
-```javascript
-    // 따봉 추가
-    copy2.unshift(0)
-    따봉변경(copy2)
-```
+    ```javascript
+        // 따봉 추가
+        copy2.unshift(0)
+        따봉변경(copy2)
+    ```
 
 <br>
 
