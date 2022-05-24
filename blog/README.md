@@ -659,18 +659,18 @@ why? state변경함수는 늦게 처리됨
 
 ## 응용
 1. 글에 아무것도 입력안하고 발행버튼 누르는거 막으려면? 
-    - input의 value값이 아무것도 없으면~ 조건을 달아야함
-    - 입력값이 추가되지 않으면~ 하면 기존에 추가된 제목으로 글이 계속 생성됨
-    ```javascript
-        if (input.value == '') {
-            return
-        } else {
-            copy.unshift(입력값)
-            글제목변경(copy)
-            input.value = ''
-            input.focus()
-        }
-    ```
+- input의 value값이 아무것도 없으면~ 조건을 달아야함
+- 입력값이 추가되지 않으면~ 하면 기존에 추가된 제목으로 글이 계속 생성됨
+```javascript
+    if (input.value == '') {
+        return
+    } else {
+        copy.unshift(입력값)
+        글제목변경(copy)
+        input.value = ''
+        input.focus()
+    }
+```
 
 <br>
 
