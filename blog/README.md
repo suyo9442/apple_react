@@ -700,4 +700,20 @@ why? state변경함수는 늦게 처리됨
 <br><br><br>
 
 
-# level_13: 
+# level_13: class를 이용한 옛날 옛적 React 문법
+## 예전 문법으로 component 만들기
+- class: 변수/함수 보관하는 덩어리
+- extends: 오른쪽에 있는 요소의 성질을 물려받겠습니다
+- construct: class의 변수/초기값을 저장할 때 씀
+    > state는 construct 안에 작성
+- state 꺼내쓰려면 this.state.key
+- state 바꾸려면 this.setState( {name: 'Park'} )
+- 함수를 갖다 쓰려면 this.함수명.bind(this)
+    > bind안쓰려면 함수를 arrow로 작성
+
+
+<!-------------------------------------------------------------------->
+<br><br><br>
+
+
+# level_14: class를 이용한 옛날 옛적 React 문법

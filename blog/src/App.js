@@ -1,6 +1,6 @@
 /* eslint-disable */
 import './App.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 
 function App() {
@@ -161,6 +161,29 @@ function List() {
     <p>2월 17일 발행</p>
     </div>
   )
+}
+
+class Profile extends React.Component {
+  constructor() {
+    super();
+    this.state = { name: 'Kim' }
+  }
+
+  changeName = () => {
+    this.setState( {name: 'Park'} )
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>프로필입니다</h3>
+        <p>저는 { this.state.name} 입니다</p>
+        <button onClick={ ()=> {
+          this.changeName
+        } }>버튼</button>
+      </div>
+    )
+  }
 }
 
 export default App;
