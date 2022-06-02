@@ -40,17 +40,20 @@ function App() {
             </Container>
           </>
         } />
+
         <Route path="/detail/:id" element={
           <>
             <Detail shoes={shoes} />
           </>
         } />
+
         <Route path="*" element={<div>없는페이지</div>} />
 
       </Routes>
     </div>
   );
 }
+
 
 // 상품박스 컴포넌트
 function Card(props) {

@@ -9,7 +9,6 @@
 # leve2_2: 이미지 넣는 법 & public 폴더 이용하기
 
 1. css에서 이미지 사용하기
-
 ```css
 .main-bg {
   height: 300px;
@@ -28,35 +27,44 @@ import bg from "./img/bg.png";
 ```
 
 3. public 폴더 이미지 사용 시
-   > /이미지.png
-   > 주의사항: .com/어쩌구/ 히위 경로에 발행할 때 문제
-   > <br/>
+- /이미지.png 최상위 루트 사용
+- 주의사항: .com/어쩌구/ 히위 경로에 발행할 때 문제
 
-1) 해결법1
+   1) 해결법1
+   ```html
    <img src="/어쩌구/이미지.png"/>
-   <br/>
-2) 해결법2 (권장방식)
+   ```
+
+   2) 해결법2 (권장방식)
+   ```html
    <img src={process.env.PUBLIC_URL + '/logo192.png'} />
+   ```
+
 
 <!-------------------------------------------------------------------->
-
 <br><br><br>
+
 
 # leve2_3: 코드 길어지면 import export 하면 됩니다
 
-코드가 길어지면 다른 파일에 따로 빼기
-다른 파일에 있는 자료를 가져오려면
-import / export 문법 사용
-변수를 export하고 import하면 됨
+- 코드가 길어지면 다른 파일에 따로 뺀다
+- 다른 파일에 있는 자료를 가져오려면 import / export 문법 사용, 변수를 export하고 import하면 됨
 
-변수 export
-export default 변수명;
-{작명}
+<br>
 
-여러변수 export (작명X)
-export {a, b};
-import {a, b} from './data.js';
-{a} {b}
+## export 문법
+1. 변수가 하나일 때
+   ```javascript
+   export default 변수명;
+   {작명}
+   ```
+
+2. 요소가 여러개일 때
+   ```javascript
+   export {a, b};
+   import {a, b} from './data.js'; //작명X
+   {a} {b}
+   ```
 
 컴포넌트도 export도 가능
 
@@ -297,7 +305,13 @@ let newBtn = styled.button(YellowBtn)``
 
 
 ## 빡통식 정리 ㅋㅋ
-- 재렌더링 마다 코드실행하고 싶을 때 사용
-- mount시 1회 코드실행하고 싶을 때
-- unmount시 1회 코드실행하고 싶을 때
+1. 재렌더링 마다 코드실행하고 싶을 때 사용
+    useEffect(()=>{})
 
+2. mount시 1회 코드실행하고 싶을 때
+    useEffect(()=>{}, [])
+
+3. unmount시 1회 코드실행하고 싶을 때
+    useEffect(()=>{
+        return() -> {}
+    }, [])

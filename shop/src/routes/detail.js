@@ -16,14 +16,6 @@ let Box = styled.div`
 function Detail(props) {
     let { id } = useParams();
     // console.log(id)
-    let [alert, setalert] = useState(true)
-
-
-    useState(() => {
-        setTimeout(() => {
-            setalert(false)
-        }, 2000)
-    }, [])
 
     return (
         <div className="container">
